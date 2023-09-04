@@ -178,27 +178,27 @@ namespace Tasks30
             //Console.WriteLine(str);
 
             //Task 14
-            List<Item> list = new List<Item> {
-            new Item { ItemId = 1, Name = " Joseph ", Grade = 800 },
-            new Item { ItemId = 2, Name = "Alex", Grade = 458 },
-            new Item { ItemId = 3, Name = "Harris", Grade = 900 },
-            new Item { ItemId = 4, Name = "Taylor", Grade = 900 },
-            new Item { ItemId = 5, Name = "Smith", Grade = 458 },
-            new Item { ItemId = 6, Name = "Natasa", Grade = 700 },
-            new Item { ItemId = 7, Name = "David", Grade = 750 },
-            new Item { ItemId = 8, Name = "Harry", Grade = 700 },
-            new Item { ItemId = 9, Name = "Nicolash", Grade = 597 },
-            new Item { ItemId = 10, Name = "Jenny", Grade = 750 }
-        };
-            Console.Write("Which maximum grade point(1st, 2nd, 3rd, ...) you want to find: ");
-            int rank = Convert.ToInt32(Console.ReadLine());
-            var students =(from item in list
-                          group item by item.Grade into y
-                          orderby y.Key descending
-                          select new {
-                              rec = y.ToList()
-                          }).ToList();
-            students[rank - 1].rec.ForEach(i => Console.WriteLine($" Id : {i.ItemId},  Name : {i.Name},  achieved Grade Point : {i.Grade}"));
+        //    List<Item> list = new List<Item> {
+        //    new Item { ItemId = 1, Name = " Joseph ", Grade = 800 },
+        //    new Item { ItemId = 2, Name = "Alex", Grade = 458 },
+        //    new Item { ItemId = 3, Name = "Harris", Grade = 900 },
+        //    new Item { ItemId = 4, Name = "Taylor", Grade = 900 },
+        //    new Item { ItemId = 5, Name = "Smith", Grade = 458 },
+        //    new Item { ItemId = 6, Name = "Natasa", Grade = 700 },
+        //    new Item { ItemId = 7, Name = "David", Grade = 750 },
+        //    new Item { ItemId = 8, Name = "Harry", Grade = 700 },
+        //    new Item { ItemId = 9, Name = "Nicolash", Grade = 597 },
+        //    new Item { ItemId = 10, Name = "Jenny", Grade = 750 }
+        //};
+        //    Console.Write("Which maximum grade point(1st, 2nd, 3rd, ...) you want to find: ");
+        //    int rank = Convert.ToInt32(Console.ReadLine());
+        //    var students =(from item in list
+        //                  group item by item.Grade into y
+        //                  orderby y.Key descending
+        //                  select new {
+        //                      rec = y.ToList()
+        //                  }).ToList();
+        //    students[rank - 1].rec.ForEach(i => Console.WriteLine($" Id : {i.ItemId},  Name : {i.Name},  achieved Grade Point : {i.Grade}"));
 
             //Task 15
             //Console.WriteLine("The files are: ");
@@ -403,15 +403,4 @@ namespace Tasks30
             //}
         }
     }
-    public class Item
-        {
-            public int ItemId { get; set; }
-            public string Name { get; set; }
-            public int Grade { get; set; }
-    }
-        public class Purchase
-        {
-            public int Id { get; set; }
-            public int Quantity { get; set; }
-        }
 }
